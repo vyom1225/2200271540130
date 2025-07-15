@@ -59,7 +59,7 @@ export async function createShortUrl(req: Request, res: Response) {
       shortLink: `${req.protocol}://${req.get('host')}/${code}`,
       expiry: expiresAt
     });
-  } catch (err) {
+  } catch (err : any) {
     await sendLog({
       stack: 'backend',
       level: 'error',
